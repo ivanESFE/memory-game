@@ -114,3 +114,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   createBoard()
 })
+
+
+
+var grid = document.getElementsByClassName('grid')
+
+
+function ratoliTauler() {
+    document.getElementById('result').style.color = 'blue';
+}
+function ratoliForaTauler() {
+  document.getElementById('result').style.color = 'green';
+}
+
+
+grid.addEventListener('mouseenter', ratoliTauler)
+grid.addEventListener('mouseleave', ratoliForaTauler)
