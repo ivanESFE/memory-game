@@ -4,3 +4,9 @@
   width: 400px;
   height: 300px;
 }
+
+#mover{
+  position: relative;
+  left: 325px;
+  bottom: 40px;
+}

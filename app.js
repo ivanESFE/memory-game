@@ -58,7 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let cardsChosen = []
   let cardsChosenId = []
   let cardsWon = []
-
+  //creo vides restants i selecciono l'id del html
+  let videsR = 4
+  let viidas= document.getElementById('vida')
   //create your board
   function createBoard() {
     for (let i = 0; i < cardArray.length; i++) {
@@ -80,6 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('You have clicked the same image!')
+      //si cliquem la mateixa img restem 1 al marcador
+      videsR = videsR -1
+      viidas.innerHTML = ':' + videsR
     }
     else if (cardsChosen[0] === cardsChosen[1]) {
       alert('You found a match')
@@ -92,6 +97,13 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[optionOneId].setAttribute('src', 'images/blank.png')
       cards[optionTwoId].setAttribute('src', 'images/blank.png')
       alert('Sorry, try again')
+      //si m'equivoco , restem 1 al marcador
+      videsR = videsR - 1 
+      viidas.innerHTML = ':' + videsR
+    }
+    //si les vides arriben a 0 surt l'alerta
+    if (videsR == 0) {
+      alert('has perdut ivan Esteban Fernandez!')
     }
     cardsChosen = []
     cardsChosenId = []
@@ -128,5 +140,7 @@ function ratoliForaTauler() {
 }
 
 
-grid.addEventListener('mouseenter', ratoliTauler)
-grid.addEventListener('mouseleave', ratoliForaTauler)
+
+
+
+
